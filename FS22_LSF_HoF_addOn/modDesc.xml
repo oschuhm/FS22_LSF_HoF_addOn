@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="72">
+	<author>LS-Farmers</author>
+	<version>1.0.0.0</version>
+	<title>
+		<en>LS-Farmers HoF AddOn Pack</en>
+		<de>LS-Farmers HoF AddOn Pack</de>
+	</title>
+	<description>
+		<en>
+			<![CDATA[test]]></en>
+		<de>
+			<![CDATA[test]]></de>
+	</description>
+	<iconFilename>electricityGenerator/icon_electricityGenerator01.png</iconFilename>
+	<multiplayer supported="true"/>
+	<placeableTypes>
+		<type name="powerSolarPanel" parent="simplePlaceable" className="Placeable" filename="$dataS/scripts/placeables/Placeable.lua">
+			<specialization name="productionPoint"/>
+			<specialization name="infoTrigger"/>
+			<specialization name="solarPanels"/>
+			<specialization name="incomePerHour"/>
+		</type>
+	</placeableTypes>
+	<l10n>
+		<text name="solarpower">
+			<en>Small Solar Panel</en>
+			<de>Kleine Solaranlage</de>
+		</text>
+	</l10n>
+	<storeItems>
+		<storeItem xmlFilename="electricityGenerator/electricityGenerator01.xml"/>
+	</storeItems>
+</modDesc>

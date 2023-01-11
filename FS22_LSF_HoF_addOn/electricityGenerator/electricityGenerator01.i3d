@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="electricityGenerator01" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="9.0.3"/>
+  </Asset>
+
+  <Files>
+    <File fileId="8" filename="$data/maps/textures/shared/warningStripes_normal.png"/>
+    <File fileId="9" filename="$data/maps/textures/shared/warningStripes_specular.png"/>
+    <File fileId="2" filename="$data/placeables/lizard/electricityGenerators/level01/electricityGenerator01_diffuse.png"/>
+    <File fileId="3" filename="$data/placeables/lizard/electricityGenerators/level01/electricityGenerator01_normal.png"/>
+    <File fileId="4" filename="$data/placeables/lizard/electricityGenerators/level01/electricityGenerator01_specular.png"/>
+    <File fileId="5" filename="$data/shaders/placeableShader.xml"/>
+    <File fileId="7" filename="../textures/warningStripes_diffuse_orange.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="electricityGenerator01_mat" materialId="4" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <CustomParameter name="placeableColorScale" value="0 1 0 0"/>
+      <CustomParameter name="snowScale" value="1 0 0 0"/>
+    </Material>
+    <Material name="lambert1" materialId="5" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="warningStripes_mat" materialId="6">
+      <Texture fileId="7"/>
+      <Normalmap fileId="8"/>
+      <Glossmap fileId="9"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="electricityGenerator01.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+      <TransformGroup name="electricityGenerator1" nodeId="16">
+        <TransformGroup name="clearAreas" nodeId="17">
+          <TransformGroup name="clearArea1Start" translation="-0.227878 0 -0.229246" nodeId="18">
+            <TransformGroup name="clearArea1Width" translation="0 0 0.459724" nodeId="19"/>
+            <TransformGroup name="clearArea1Height" translation="0.465449 0 7.10543e-17" nodeId="20"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="levelAreas" nodeId="21">
+          <TransformGroup name="levelArea1Start" translation="-0.228128 0 -0.227688" nodeId="22">
+            <TransformGroup name="levelArea1Width" translation="3.55271e-17 0 0.459471" nodeId="23"/>
+            <TransformGroup name="levelArea1Height" translation="0.46476 0 -3.55271e-17" nodeId="24"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="testAreas" nodeId="25">
+          <TransformGroup name="testArea1Start" translation="-0.347608 0 -0.3441" nodeId="26">
+            <TransformGroup name="testArea1End" translation="0.704985 4.40769 1.49756" nodeId="27"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="tipOcclusionUpdateAreas" nodeId="28">
+          <TransformGroup name="tipOcclusionUpdateArea1Start" translation="-0.253681 0 -0.253677" nodeId="29">
+            <TransformGroup name="tipOcclusionUpdateArea1End" translation="0.537642 0 0.483754" nodeId="30"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="tipCollision" nodeId="31">
+          <Shape shapeId="1" name="collision" visibility="false" static="true" collisionMask="524288" nodeId="32" materialIds="5" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        </TransformGroup>
+        <TransformGroup name="visuals" nodeId="33">
+          <TransformGroup name="winter" nodeId="34"/>
+          <Shape shapeId="2" name="electricityGenerator01Vis" clipDistance="150" nodeId="35" materialIds="4" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+        <TransformGroup name="collisions" nodeId="36">
+          <Shape shapeId="3" name="collision" visibility="false" static="true" density="0.0001" nodeId="37" materialIds="5" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        </TransformGroup>
+        <TransformGroup name="transform" nodeId="38"/>
+        <Shape shapeId="4" name="infoTrigger" translation="0 0 -0.0361684" scale="0.2 1 1" static="true" trigger="true" collisionMask="1048576" nodeId="39" materialIds="5" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        <TransformGroup name="sellingStation" translation="-8.20372e-08 -4.51649e-16 -0.25177" rotation="4.16535e-07 90 3.15437e-07" nodeId="40">
+          <Shape shapeId="5" name="unloadTrigger" translation="-2.20042 -0.3 0.0578377" scale="0.7 1 0.7" static="true" trigger="true" collisionMask="1073741824" nodeId="41" materialIds="5" castsShadows="true" receiveShadows="true" nonRenderable="true">
+            <TransformGroup name="TriggerMarkerUnload" translation="0 0 0.0733885" nodeId="42"/>
+          </Shape>
+          <TransformGroup name="loadingTrigger" translation="2.48698 5.4019 0" rotation="180 0 180" nodeId="43">
+            <Shape shapeId="6" name="loadingTrigger" translation="0 -0.488444 0" static="true" trigger="true" collisionMask="1073741824" nodeId="44" materialIds="5" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            <TransformGroup name="dischargeNode" nodeId="45"/>
+            <TransformGroup name="TriggerMarkerLoad" nodeId="46"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="productionPoint" nodeId="47">
+          <Shape shapeId="7" name="playerTrigger" translation="-0.217 1.6663 -1.18464" static="true" trigger="true" collisionMask="3145728" clipDistance="600" nodeId="48" materialIds="5" castsShadows="true" receiveShadows="true" nonRenderable="true">
+            <TransformGroup name="playerTriggerMarker" translation="-2.27374e-15 -0.909613 0" nodeId="49"/>
+          </Shape>
+        </TransformGroup>
+        <TransformGroup name="transform" translation="-3.59438 0 -3.14067" rotation="0 90 0" nodeId="50">
+          <Shape shapeId="8" name="warningStripesCorner3" translation="-6.5 0.01 5" rotation="-2.89884e-05 90 -1.67231e-06" clipDistance="200" nodeId="51" materialIds="6" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="8" name="warningStripesCorner3" translation="-3.63069 0.0100041 2.2" rotation="180 -90 -180" clipDistance="200" nodeId="52" materialIds="6" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="8" name="warningStripesCorner3" translation="-3.63069 0.010002 5" rotation="-2.89884e-05 180 -1.67231e-06" clipDistance="200" nodeId="53" materialIds="6" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="8" name="warningStripesCorner3" translation="-6.5 0.0100001 2.2" rotation="-7.28217e-12 0 -1.36604e-05" clipDistance="200" nodeId="54" materialIds="6" receiveShadows="true" decalLayer="1"/>
+        </TransformGroup>
+      </TransformGroup>
+  </Scene>
+
+</i3D>
